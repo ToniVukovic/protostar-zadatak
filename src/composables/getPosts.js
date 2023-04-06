@@ -13,11 +13,8 @@ const getPosts = () => {
       posts.value = await data.json();
     } catch (err) {
       error.value = err.message;
-      console.log(err.message);
     }
   };
-
   return { posts, error, load };
 };
-
 export default getPosts;

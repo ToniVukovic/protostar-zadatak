@@ -1,8 +1,7 @@
 <template>
-  <!-- boot -->
   <div>
     <router-link :to="{ name: 'Details', params: { id: post.id } }">
-      <div class="card border-dark mb-3" style="max-width: 18rem">
+      <div class="card border-dark text-bg-light mb-3" style="max-width: 18rem">
         <h5 class="card-title pt-2 card-header">
           {{ shortTitle }}
         </h5>
@@ -14,7 +13,6 @@
       </div>
     </router-link>
   </div>
-  <!-- boot -->
 </template>
 
 <script>

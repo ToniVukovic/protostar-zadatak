@@ -1,5 +1,4 @@
 <template>
-  <!-- boot -->
   <div v-if="error">{{ error }}</div>
   <div class="card-container" v-if="post">
     <div class="card" style="width: 36rem">
@@ -12,7 +11,18 @@
       </div>
     </div>
   </div>
-  <!-- boot -->
+  <div v-for="comment in comments" :key="comment.id">
+    <div class="comment-container">
+      <div class="card border-light mb-3" style="max-width: 36rem">
+        <div class="card-header" style="text-align: left">
+          <em>{{ comment.email }}</em>
+        </div>
+        <div class="comment-body">
+          <p>{{ comment.body }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -21,16 +31,17 @@ import getPost from "@/composables/getPost";
 export default {
   props: ["id"],
   setup(props) {
-    const { post, error, load } = getPost(props.id);
+    const { post, error, comments, load } = getPost(props.id);
     load();
 
-    return { post, error };
+    return { post, error, comments };
   },
 };
 </script>
 
 <style scoped>
-.card-container {
+.card-container,
+.comment-container {
   display: flex;
   justify-content: center;
   margin-top: 35px;
@@ -43,5 +54,14 @@ export default {
 
 a {
   text-decoration: none;
+}
+
+.comment-container {
+  font-size: 14px;
+  text-align: left;
+}
+
+.comment-body {
+  padding: 8px;
 }
 </style>

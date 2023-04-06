@@ -1,9 +1,7 @@
 <template>
-  <div class="home">
+  <div>
     <h1 class="mt-4 mb-3">Click on a card to open its content!</h1>
-    <!-- search -->
-    <div class="mb-2"><input type="text" v-model="search" /></div>
-
+    <div class="mb-2"><input type="text" /></div>
     <div v-if="error">{{ error }}</div>
     <div v-if="posts.length">
       <PostList :posts="posts" />
@@ -17,13 +15,11 @@ import PostList from "@/components/PostList.vue";
 import getPosts from "../composables/getPosts";
 
 export default {
-  name: "HomeView",
+  name: "Posts",
   components: { PostList },
   setup() {
     const { posts, error, load } = getPosts();
-
     load();
-
     return { posts, error };
   },
 };
