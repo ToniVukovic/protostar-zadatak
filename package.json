@@ -7,13 +7,19 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.7",
+    "bootstrap": "^5.2.3",
+    "bootstrap-vue": "^2.23.1",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13",
+    "vue": "^3.2.47",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.1.2",
+    "babel-preset-env": "^1.7.0"
   }
 }
